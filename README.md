@@ -108,7 +108,7 @@ Functional simulation is performed to verify the correctness of:
 </p>
 - SSExpMul with Wishbone slave 
 <p align="center">
-  <img src="docs/wf_expo_wb.png" width="750"/>
+  <img src="docs/Screenshot 2025-12-31 003103.png" width="750"/>
 </p>
 
 
