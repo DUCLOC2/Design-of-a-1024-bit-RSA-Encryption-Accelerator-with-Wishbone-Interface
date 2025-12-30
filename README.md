@@ -52,3 +52,63 @@ Therefore, the **Shift–Sub Modular Multiplication (SSMM)** algorithm is adopte
 SSMM replaces division with **shift and conditional subtraction**, making it well-suited for **hardware-based RSA acceleration**.
 
 ---
+
+## ⚙️ 2️⃣ Algorithm: Modular Exponentiation Using SSMM
+
+---
+
+### 2.1 SSMMul(a, b, m) Shift-Sub Modular Multiplication
+
+<p align="center">
+  <img src="docs/algo_mul.png" width="700"/>
+</p>
+
+---
+
+### 2.2 SSExpMul(b, e, m) Modular Exponentiation using SSMMul()
+
+<p align="center">
+  <img src="docs/algo_expo.png" width="700"/>
+</p>
+
+
+---
+## 🔌 3️⃣ Wishbone Interface
+
+The RSA-1024 accelerator is integrated into the system using the **Wishbone bus protocol**, allowing seamless communication with a host processor or controller.
+
+---
+
+### Wishbone Overview
+
+Wishbone is an open-source on-chip interconnect standard that supports:
+- Simple and flexible bus transactions  
+- Synchronous, single-master operation  
+- Memory-mapped register access  
+
+The RSA accelerator acts as a **Wishbone slave**, controlled by a master through read/write transactions.
+
+## 📊 4️⃣ Results
+
+This section presents the **implementation and verification results** of the **RSA-1024 hardware accelerator** with **Wishbone interface**.
+
+---
+
+### 4.1 Functional Simulation Results
+
+Functional simulation is performed to verify the correctness of:
+- **SSMMul** (modular multiplication)
+
+<p align="center">
+  <img src="docs/wf_mod_mul.png" width="750"/>
+</p>
+- SSExpMul (modular exponentiation)
+<p align="center">
+  <img src="docs/mod_expo.png" width="750"/>
+</p>
+- SSExpMul with Wishbone slave 
+<p align="center">
+  <img src="docs/wf_expo_wb.png" width="750"/>
+</p>
+
+
